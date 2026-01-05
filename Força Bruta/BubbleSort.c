@@ -37,5 +37,5 @@ int main(){
     BubbleSort(Vetor, tamanho);
     Impressao(Vetor, tamanho);
 
-    return 1;
+    return 0;
 }

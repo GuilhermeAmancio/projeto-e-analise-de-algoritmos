@@ -37,5 +37,5 @@ int main(){
     else
      printf("O valor nao foi encontrado");
 
-    return 1;
+    return 0;
 }

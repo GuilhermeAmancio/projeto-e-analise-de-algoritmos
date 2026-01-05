@@ -51,5 +51,5 @@ int main(){
     MaisProximos(d, num, pontos);
 
 
-    return 1;
+    return 0;
 }

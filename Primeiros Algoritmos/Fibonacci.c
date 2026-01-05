@@ -18,5 +18,5 @@ int main(){
     int resultado = Fibonacci(n);
     printf("O %d-esimo termo de Fibonacci: %d", n, resultado);
 
-    return 1;
+    return 0;
 }

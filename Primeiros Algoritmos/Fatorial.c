@@ -18,5 +18,5 @@ int main(){
     int resultado = fatorial(num);
     printf("O fatorial de %d: %d ", num, resultado);
 
-    return 1;
+    return 0;
 }

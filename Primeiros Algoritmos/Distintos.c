@@ -37,5 +37,5 @@ int main(){
         printf("Existe algum elemento que se repete");
     }
      
-    return 1;
+    return 0;
 }

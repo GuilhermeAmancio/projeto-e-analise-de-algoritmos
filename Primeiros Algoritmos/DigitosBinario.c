@@ -21,5 +21,5 @@ int main(){
 
     printf("O numero %d tem %d digitos em sua representacao em binario", num, resultado);
 
-    return 1;
+    return 0;
 }

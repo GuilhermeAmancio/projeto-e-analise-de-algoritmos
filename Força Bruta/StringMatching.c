@@ -39,5 +39,5 @@ int main(){
         printf("Nao houve ocorrencia");
       }
 
-    return 1;
+    return 0;
 }

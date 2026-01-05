@@ -61,4 +61,6 @@ int matrizC[ordem][ordem];
 
  printf("\nMatriz AxB: \n");
  MostrarMatriz(ordem, ordem, matrizC);
+
+ return 0;
 }

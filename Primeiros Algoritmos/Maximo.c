@@ -30,5 +30,5 @@ int main(){
     int Max = Maximo(Vetor, num);
     printf("O valor maximo desse vetor: %d", Max);
 
-    return 1;
+    return 0;
 }
