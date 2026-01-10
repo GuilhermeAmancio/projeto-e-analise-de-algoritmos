@@ -1,4 +1,3 @@
-//Dado dois vetores ordenados v1 e v2, produz um vetor c ordenado contendo todos os elementos de v1 e v2
 #include <stdio.h>
 
 //Função de preenchimento de um vetor
@@ -11,8 +10,7 @@ void preencheVetor(int vetor[], int n){
     }
 }
 
-
-
+//Função de Merge
 void merge(int v1[], int p, int v2[], int q, int c[]) {
     int i = 0, j = 0;
 
@@ -46,6 +44,29 @@ void merge(int v1[], int p, int v2[], int q, int c[]) {
     }
 }
 
+
+void mergeSort(int A[], int n){
+    if(n > 1){
+        int meio = n/2;
+        int n2 = n - meio; //caso o vetor tenha comprimento ímpar (o vetor C terá comprimento ímpar)
+        int B[meio];
+        //vetor B vai ser igual a A[0..meio - 1]
+        for(int i = 0; i < meio; i++){
+            B[i] = A[i];
+        }
+
+        //vetor C vai ser igual a A[meio..n - 1]
+        int C[n2];
+        for(int i = meio; i < n; i++){
+            C[i- meio] = A[i]; 
+        }
+
+        mergeSort(B, meio);
+        mergeSort(C, n2);
+        merge(B, meio, C, n2, A);
+    }
+}
+
 //Função de impressão (para verificar se o vetor foi ordenado)
 void Impressao(int vetor[], int n){
     printf("[");
@@ -55,27 +76,18 @@ void Impressao(int vetor[], int n){
     printf("]");
 }
 
-
 int main(){
-    int n1, n2; 
-    printf("Qual o tamanho do primeiro vetor?: ");
-    scanf("%d", &n1);
-    int vetor1[n1];
-    printf("Qual o tamanho do segundo vetor?: ");
-    scanf("%d", &n2);
-    int vetor2[n2];
+    int n; 
+    printf("Qual o tamanho do vetor?: ");
+    scanf("%d", &n);
+    int vetor[n];
 
-    printf("valores do primeiro vetor:\n");
-    preencheVetor(vetor1, n1);
-    printf("valores do segundo vetor:\n ");
-    preencheVetor(vetor2, n2);
+    printf("valores do vetor:\n");
+    preencheVetor(vetor, n);
 
-    int tam_c = n1 + n2;
-
-    int c[tam_c];
-    merge(vetor1, n1, vetor2, n2, c);
-    printf("Merge:\n");
-    Impressao(c, tam_c);
+    mergeSort(vetor,n);
+    printf("O vetor ordenado: \n");
+    Impressao(vetor, n);
 
     return 0;
 }
