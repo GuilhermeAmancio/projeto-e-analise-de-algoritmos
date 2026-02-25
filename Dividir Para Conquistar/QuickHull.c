@@ -9,10 +9,10 @@ typedef struct {
     double y;
 } ponto;
 
-/* ================= ORIENTAÇÃO =================
-   > 0  → ponto está à esquerda de AB
-   < 0  → ponto está à direita de AB
-   = 0  → colinear
+/*  Orientação
+   > 0  : ponto está à esquerda de AB
+   < 0  : ponto está à direita de AB
+   = 0  : colinear
 */
 double orientacao(ponto a, ponto b, ponto p) {
     return (b.x - a.x) * (p.y - a.y) -
@@ -23,7 +23,7 @@ double distancia_reta(ponto a, ponto b, ponto p) {
     return fabs(orientacao(a, b, p));
 }
 
-/* ================= QUICKHULL ================= */
+//QUICKHULL
 
 void findHull(ponto *pontos, int n, ponto a, ponto b, int lado) {
     int indice_max = -1;
@@ -49,13 +49,13 @@ void findHull(ponto *pontos, int n, ponto a, ponto b, int lado) {
 
     ponto p_max = pontos[indice_max];
 
-    /* Recursão esquerda */
+    //Recursão esquerda
     findHull(pontos, n, a, p_max, 1);
 
-    /* Imprime ponto extremo */
+    //Imprime ponto extremo
     printf("(%.2lf, %.2lf) ", p_max.x, p_max.y);
 
-    /* Recursão direita */
+    //Recursão direita
     findHull(pontos, n, p_max, b, 1);
 }
 
@@ -84,18 +84,16 @@ void QuickHull(ponto *pontos, int n) {
 
     printf("(%.2lf, %.2lf) ", A.x, A.y);
 
-    /* Parte superior */
+    //Parte superior 
     findHull(pontos, n, A, B, 1);
 
     printf("(%.2lf, %.2lf) ", B.x, B.y);
 
-    /* Parte inferior */
+    //Parte inferior 
     findHull(pontos, n, A, B, -1);
 
     printf("\n");
 }
-
-/* ================= MAIN ================= */
 
 int main() {
 
