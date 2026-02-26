@@ -1,3 +1,6 @@
+/*A envoltória convexa de um conjunto de pontos no plano é o menor conjunto convexo que 
+contém todos esses pontos.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

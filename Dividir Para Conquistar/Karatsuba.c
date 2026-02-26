@@ -1,4 +1,4 @@
-//Algoritmo de Karatsuba para dois números grandes
+//Algoritmo de Karatsuba para multiplicação de dois números grandes
 
 #include <stdio.h>
 #include <string.h>
